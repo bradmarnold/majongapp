@@ -13,3 +13,15 @@ jobs:
         with:
           node-version: '20'
       - run: cd apps/web && npm install && npm run build
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
