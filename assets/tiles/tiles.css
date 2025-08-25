@@ -1,0 +1,144 @@
+.mahjong-tile {
+  display: inline-block;
+  width: 64px;
+  height: 88px;
+  background-image: url('./spritesheet.svg');
+  background-repeat: no-repeat;
+}
+
+.mahjong-tile-man-1 {
+  background-position: -0px -0px;
+}
+
+.mahjong-tile-man-2 {
+  background-position: -64px -0px;
+}
+
+.mahjong-tile-man-3 {
+  background-position: -128px -0px;
+}
+
+.mahjong-tile-man-4 {
+  background-position: -192px -0px;
+}
+
+.mahjong-tile-man-5 {
+  background-position: -256px -0px;
+}
+
+.mahjong-tile-man-6 {
+  background-position: -320px -0px;
+}
+
+.mahjong-tile-man-7 {
+  background-position: -384px -0px;
+}
+
+.mahjong-tile-man-8 {
+  background-position: -448px -0px;
+}
+
+.mahjong-tile-man-9 {
+  background-position: -512px -0px;
+}
+
+.mahjong-tile-pin-1 {
+  background-position: -576px -0px;
+}
+
+.mahjong-tile-pin-2 {
+  background-position: -0px -88px;
+}
+
+.mahjong-tile-pin-3 {
+  background-position: -64px -88px;
+}
+
+.mahjong-tile-pin-4 {
+  background-position: -128px -88px;
+}
+
+.mahjong-tile-pin-5 {
+  background-position: -192px -88px;
+}
+
+.mahjong-tile-pin-6 {
+  background-position: -256px -88px;
+}
+
+.mahjong-tile-pin-7 {
+  background-position: -320px -88px;
+}
+
+.mahjong-tile-pin-8 {
+  background-position: -384px -88px;
+}
+
+.mahjong-tile-pin-9 {
+  background-position: -448px -88px;
+}
+
+.mahjong-tile-sou-1 {
+  background-position: -512px -88px;
+}
+
+.mahjong-tile-sou-2 {
+  background-position: -576px -88px;
+}
+
+.mahjong-tile-sou-3 {
+  background-position: -0px -176px;
+}
+
+.mahjong-tile-sou-4 {
+  background-position: -64px -176px;
+}
+
+.mahjong-tile-sou-5 {
+  background-position: -128px -176px;
+}
+
+.mahjong-tile-sou-6 {
+  background-position: -192px -176px;
+}
+
+.mahjong-tile-sou-7 {
+  background-position: -256px -176px;
+}
+
+.mahjong-tile-sou-8 {
+  background-position: -320px -176px;
+}
+
+.mahjong-tile-sou-9 {
+  background-position: -384px -176px;
+}
+
+.mahjong-tile-honor-east {
+  background-position: -448px -176px;
+}
+
+.mahjong-tile-honor-south {
+  background-position: -512px -176px;
+}
+
+.mahjong-tile-honor-west {
+  background-position: -576px -176px;
+}
+
+.mahjong-tile-honor-north {
+  background-position: -0px -264px;
+}
+
+.mahjong-tile-honor-red {
+  background-position: -64px -264px;
+}
+
+.mahjong-tile-honor-green {
+  background-position: -128px -264px;
+}
+
+.mahjong-tile-honor-white {
+  background-position: -192px -264px;
+}
+

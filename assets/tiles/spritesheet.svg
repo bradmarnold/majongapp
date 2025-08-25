@@ -1,0 +1,138 @@
+<svg width="640" height="352" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0, 0)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#dc2626" text-anchor="middle">1萬</text>
+  </g>
+  <g transform="translate(64, 0)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#dc2626" text-anchor="middle">2萬</text>
+  </g>
+  <g transform="translate(128, 0)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#dc2626" text-anchor="middle">3萬</text>
+  </g>
+  <g transform="translate(192, 0)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#dc2626" text-anchor="middle">4萬</text>
+  </g>
+  <g transform="translate(256, 0)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#dc2626" text-anchor="middle">5萬</text>
+  </g>
+  <g transform="translate(320, 0)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#dc2626" text-anchor="middle">6萬</text>
+  </g>
+  <g transform="translate(384, 0)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#dc2626" text-anchor="middle">7萬</text>
+  </g>
+  <g transform="translate(448, 0)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#dc2626" text-anchor="middle">8萬</text>
+  </g>
+  <g transform="translate(512, 0)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#dc2626" text-anchor="middle">9萬</text>
+  </g>
+  <g transform="translate(576, 0)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2563eb" text-anchor="middle">1筒</text>
+  </g>
+  <g transform="translate(0, 88)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2563eb" text-anchor="middle">2筒</text>
+  </g>
+  <g transform="translate(64, 88)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2563eb" text-anchor="middle">3筒</text>
+  </g>
+  <g transform="translate(128, 88)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2563eb" text-anchor="middle">4筒</text>
+  </g>
+  <g transform="translate(192, 88)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2563eb" text-anchor="middle">5筒</text>
+  </g>
+  <g transform="translate(256, 88)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2563eb" text-anchor="middle">6筒</text>
+  </g>
+  <g transform="translate(320, 88)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2563eb" text-anchor="middle">7筒</text>
+  </g>
+  <g transform="translate(384, 88)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2563eb" text-anchor="middle">8筒</text>
+  </g>
+  <g transform="translate(448, 88)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2563eb" text-anchor="middle">9筒</text>
+  </g>
+  <g transform="translate(512, 88)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#16a34a" text-anchor="middle">1索</text>
+  </g>
+  <g transform="translate(576, 88)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#16a34a" text-anchor="middle">2索</text>
+  </g>
+  <g transform="translate(0, 176)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#16a34a" text-anchor="middle">3索</text>
+  </g>
+  <g transform="translate(64, 176)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#16a34a" text-anchor="middle">4索</text>
+  </g>
+  <g transform="translate(128, 176)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#16a34a" text-anchor="middle">5索</text>
+  </g>
+  <g transform="translate(192, 176)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#16a34a" text-anchor="middle">6索</text>
+  </g>
+  <g transform="translate(256, 176)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#16a34a" text-anchor="middle">7索</text>
+  </g>
+  <g transform="translate(320, 176)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#16a34a" text-anchor="middle">8索</text>
+  </g>
+  <g transform="translate(384, 176)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#16a34a" text-anchor="middle">9索</text>
+  </g>
+  <g transform="translate(448, 176)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#7c3aed" text-anchor="middle">東</text>
+  </g>
+  <g transform="translate(512, 176)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#7c3aed" text-anchor="middle">南</text>
+  </g>
+  <g transform="translate(576, 176)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#7c3aed" text-anchor="middle">西</text>
+  </g>
+  <g transform="translate(0, 264)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#7c3aed" text-anchor="middle">北</text>
+  </g>
+  <g transform="translate(64, 264)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#7c3aed" text-anchor="middle">中</text>
+  </g>
+  <g transform="translate(128, 264)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#7c3aed" text-anchor="middle">發</text>
+  </g>
+  <g transform="translate(192, 264)">
+    <rect width="64" height="88" fill="#f8f9fa" stroke="#ccc" stroke-width="2" rx="4"/>
+    <text x="32" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#7c3aed" text-anchor="middle">白</text>
+  </g>
+</svg>

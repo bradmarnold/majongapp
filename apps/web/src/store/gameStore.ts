@@ -164,9 +164,50 @@ export const useGameStore = create<GameStore>()(
       },
 
       updateAdvice: (advice: AdviceResult | null) => {
-        set({
-          currentAdvice: advice,
-        });
+        const state = get();
+        
+        // If advice is enabled and we have an API URL, try to get enhanced advice
+        if (advice && state.adviceEnabled && import.meta.env.VITE_ADVICE_API_URL) {
+          // Try to get enhanced advice from API
+          fetch(`${import.meta.env.VITE_ADVICE_API_URL}/api/advice`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              summary: `Round ${state.round}, ${state.playerHand.length} tiles in hand, ${advice.action} recommended with priority ${advice.priority}. ${advice.reasoning}`,
+            }),
+          })
+            .then(response => response.json())
+            .then(data => {
+              if (data.tip) {
+                // Enhance the advice with API response
+                const enhancedAdvice: AdviceResult = {
+                  ...advice,
+                  reasoning: data.tip,
+                  alternatives: advice.alternatives.slice(0, 2), // Limit alternatives when using API
+                };
+                
+                set({
+                  currentAdvice: enhancedAdvice,
+                });
+              } else {
+                set({
+                  currentAdvice: advice,
+                });
+              }
+            })
+            .catch(() => {
+              // Fallback to local advice if API fails
+              set({
+                currentAdvice: advice,
+              });
+            });
+        } else {
+          set({
+            currentAdvice: advice,
+          });
+        }
       },
 
       saveSnapshot: () => {
