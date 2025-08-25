@@ -14,6 +14,10 @@ jobs:
           node-version: '20'
       - run: cd apps/web && npm install && npm run build
 
+        - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
+            with:
+            path: apps/web/dist
   deploy:
     needs: build
     permissions:
