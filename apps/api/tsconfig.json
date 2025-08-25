@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "extends": "../../tsconfig.json",
+    "outDir": "./dist",
+    "module": "CommonJS",
+    "target": "ES2022"
+  },
+  "include": ["api/**/*"],
+  "exclude": ["dist"]
+}
