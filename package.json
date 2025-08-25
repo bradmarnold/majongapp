@@ -1,0 +1,9 @@
+{
+  "name": "majongapp",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "apps/api",
+    "packages/*"
+  ]
+}
