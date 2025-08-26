@@ -1,0 +1,20 @@
+name: Generate Tiles
+on:
+  workflow_dispatch:
+jobs:
+  gen:
+    permissions: { contents: write }
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: npm i openai
+      - run: node scripts/build-prompts.mjs
+      - run: node scripts/generate-tiles.mjs
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      - name: Commit tiles
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(assets): generate Mahjong tiles"

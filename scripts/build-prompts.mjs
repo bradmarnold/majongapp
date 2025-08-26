@@ -1,0 +1,13 @@
+import fs from "node:fs/promises";
+const ivory="#F4F0E6", blue="#103C57", red="#B02A2C", teal="#0D4B57", navy="#153A50", green="#1E6E52", jade="#2E6D5A";
+const base=(d)=>`Clean Mahjong tile, orthographic front view, centered, no drop shadow, transparent background. Ivory ceramic body (${ivory}) with subtle satin sheen and mild inner inset. ${d} Equal margins. Output PNG with alpha. Canvas 512x768.`;
+const chars=["一萬","二萬","三萬","四萬","五萬","六萬","七萬","八萬","九萬"].map((g,i)=>({name:`char_${i+1}`,prompt:base(`Crisp deep blue ${blue} brush-stroke glyph for '${g}'.`)}));
+const bamboos=Array.from({length:9},(_,i)=>({name:`bamboo_${i+1}`,prompt:base(`Teal ${teal} bamboo motif for ${i+1} Bamboo. High-contrast, crisp strokes.`)}));
+const dots=Array.from({length:9},(_,i)=>{const n=i+1;const extra=n===5?` Center pip in red ${red}.`:"";return {name:`dot_${n}`,prompt:base(`Navy ${navy} circle pattern for ${n} Dot${n>1?"s":""}.${extra}`)};});
+const honors=[{name:"wind_e",prompt:base(`Deep blue ${blue} East Wind glyph '東'.`)},{name:"wind_s",prompt:base(`Deep blue ${blue} South Wind glyph '南'.`)},{name:"wind_w",prompt:base(`Deep blue ${blue} West Wind glyph '西'.`)},{name:"wind_n",prompt:base(`Deep blue ${blue} North Wind glyph '北'.`)},{name:"dragon_red",prompt:base(`Red Dragon seal in ${red} with carved stamp look.`)},{name:"dragon_green",prompt:base(`Green Dragon seal in ${green} with carved stamp look.`)},{name:"dragon_white",prompt:base(`Embossed frame in blue ${blue} with blank inner field for White Dragon.`)}];
+const flowers=Array.from({length:4},(_,i)=>({name:`flower_${i+1}`,prompt:base(`Fine floral emblem for Flower ${i+1}, subtle engraving, photographic realism.`)}));
+const seasons=Array.from({length:4},(_,i)=>({name:`season_${i+1}`,prompt:base(`Seasonal emblem for Season ${i+1}, subtle engraving, photographic realism.`)}));
+const back=[{name:"tile_back",prompt:base(`Jade green ${jade} inset panel on the back with circular longevity motif in relief.`)}];
+const all=[...chars,...bamboos,...dots,...honors,...flowers,...seasons,...back];
+await fs.mkdir("assets",{recursive:true}); await fs.writeFile("assets/prompts.json",JSON.stringify(all,null,2));
+console.log(`Wrote ${all.length} prompts to assets/prompts.json`);
