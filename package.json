@@ -5,5 +5,9 @@
     "apps/web",
     "apps/api",
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "build:prompts": "node scripts/build-prompts.mjs",
+    "gen:tiles": "node scripts/generate-tiles.mjs"
+  }
 }
