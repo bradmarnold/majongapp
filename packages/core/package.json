@@ -1,0 +1,21 @@
+{
+  "name": "@majongapp/core",
+  "version": "0.1.0",
+  "description": "Core Mahjong game logic and rules engine",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "typecheck": "tsc --noEmit"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.5.2"
+  }
+}

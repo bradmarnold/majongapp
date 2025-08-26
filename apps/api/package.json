@@ -1,0 +1,20 @@
+{
+  "name": "@majongapp/api",
+  "version": "0.1.0",
+  "description": "Mahjong advice API",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "vercel dev",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@majongapp/core": "*",
+    "openai": "^4.52.7"
+  },
+  "devDependencies": {
+    "@vercel/node": "^3.2.4",
+    "typescript": "^5.5.2",
+    "vercel": "^34.2.7"
+  }
+}
