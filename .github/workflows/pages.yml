@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:
+  w  orkflow_dispatch:
 
 jobs:
   build:
@@ -12,12 +12,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: cd apps/web && npm install && npm run build
+      - run: cd apps/web && npm ci && npm run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/web/dist
 
-        - name: Upload artifact
-              uses: actions/upload-pages-artifact@v3
-            with:
-            path: apps/web/dist
   deploy:
     needs: build
     permissions:
