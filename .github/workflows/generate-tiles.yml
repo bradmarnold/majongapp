@@ -1,0 +1,88 @@
+name: Generate Tiles
+on:
+  workflow_dispatch: {}   # run it manually from Actions tab
+permissions:
+  contents: write         # allow committing the PNGs
+jobs:
+  gen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: npm i openai
+
+      # Inline Node script that builds prompts, calls OpenAI Images, and writes PNGs.
+      - name: Generate Mahjong tiles (transparent PNGs)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          node - <<'NODE'
+          import OpenAI from "openai";
+          import fs from "node:fs/promises";
+          import path from "node:path";
+
+          const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+          const outDir = "apps/web/public/tiles";
+          await fs.mkdir(outDir, { recursive: true });
+
+          const ivory="#F4F0E6", blue="#103C57", red="#B02A2C", teal="#0D4B57", navy="#153A50", green="#1E6E52", jade="#2E6D5A";
+          const base = (d)=>`Clean Mahjong tile, orthographic front view, centered, no drop shadow, transparent background. Ivory ceramic body (${ivory}) with subtle satin sheen and mild inner inset. ${d} Equal margins. PNG with alpha. Canvas 512x768.`;
+
+          const charsCJK = ["一萬","二萬","三萬","四萬","五萬","六萬","七萬","八萬","九萬"];
+          const todos = [];
+
+          for (let i=1;i<=9;i++) todos.push({name:`char_${i}`,   prompt: base(`Crisp deep blue ${blue} brush-stroke glyph for '${charsCJK[i-1]}'.`)});
+          for (let i=1;i<=9;i++) todos.push({name:`bamboo_${i}`, prompt: base(`Teal ${teal} bamboo motif for ${i} Bamboo.`)});
+          for (let i=1;i<=9;i++){ const extra = i===5?` Center pip in red ${red}.`:""; todos.push({name:`dot_${i}`, prompt: base(`Navy ${navy} circle pattern for ${i} Dot${i>1?"s":""}.${extra}`)}); }
+
+          todos.push(
+            {name:"wind_e",      prompt: base(`Deep blue ${blue} East Wind glyph '東'.`)},
+            {name:"wind_s",      prompt: base(`Deep blue ${blue} South Wind glyph '南'.`)},
+            {name:"wind_w",      prompt: base(`Deep blue ${blue} West Wind glyph '西'.`)},
+            {name:"wind_n",      prompt: base(`Deep blue ${blue} North Wind glyph '北'.`)},
+            {name:"dragon_red",  prompt: base(`Red Dragon seal in ${red}.`)},
+            {name:"dragon_green",prompt: base(`Green Dragon seal in ${green}.`)},
+            {name:"dragon_white",prompt: base(`Embossed frame in blue ${blue} with blank inner field for White Dragon.`)},
+            {name:"flower_1",    prompt: base(`Fine floral emblem for Flower 1.`)},
+            {name:"flower_2",    prompt: base(`Fine floral emblem for Flower 2.`)},
+            {name:"flower_3",    prompt: base(`Fine floral emblem for Flower 3.`)},
+            {name:"flower_4",    prompt: base(`Fine floral emblem for Flower 4.`)},
+            {name:"season_1",    prompt: base(`Seasonal emblem for Season 1.`)},
+            {name:"season_2",    prompt: base(`Seasonal emblem for Season 2.`)},
+            {name:"season_3",    prompt: base(`Seasonal emblem for Season 3.`)},
+            {name:"season_4",    prompt: base(`Seasonal emblem for Season 4.`)},
+            {name:"tile_back",   prompt: base(`Jade green ${jade} inset back panel with circular longevity motif in relief.`)}
+          );
+
+          const MAX=3; const sleep=(ms)=>new Promise(r=>setTimeout(r,ms));
+          async function genOne({name,prompt}, attempt=1){
+            try{
+              const r = await client.images.generate({
+                model: "gpt-image-1",
+                prompt,
+                size: "512x768",
+                quality: "high",
+                background: "transparent"
+              });
+              const b64 = r.data[0].b64_json;
+              await fs.writeFile(path.join(outDir, `${name}.png`), Buffer.from(b64, "base64"));
+              console.log("wrote", name);
+            } catch (e) {
+              if (attempt < 3){ await sleep(600*attempt); return genOne({name,prompt}, attempt+1); }
+              console.error("FAIL", name, e?.message || e);
+              process.exitCode = 1;
+            }
+          }
+
+          const q=[...todos], running=[];
+          for(let i=0;i<Math.min(MAX,q.length);i++) running.push(genOne(q.shift()));
+          while(q.length){ const idx=await Promise.race(running.map((p,i)=>p.then(()=>i))); running[idx]=genOne(q.shift()); }
+          await Promise.all(running);
+          console.log("DONE: tiles saved to", outDir);
+          NODE
+
+      - name: Commit tiles
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(assets): generate Mahjong tiles"
